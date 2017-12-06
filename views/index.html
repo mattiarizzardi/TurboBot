@@ -1,135 +1,18 @@
 <!doctype html>
 <html>
-   <head>
-      <title>UniTnBot Chat</title>
-      <style>
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            @import "../public/css.css";
-         }
-
-         body {
-            font: 13px Helvetica, Arial;
-         }
-
-         form {
-            background: #000;
-            padding: 3px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-         }
-
-         form input {
-            border: 0;
-            padding: 10px;
-            width: 90%;
-            margin-right: .5%;
-         }
-
-         form button {
-            width: 9%;
-            background: rgb(130, 224, 255);
-            border: none;
-            padding: 10px;
-         }
-
-         #messages {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-         }
-
-         #messages li {
-            padding: 5px 10px;
-         }
-
-         #messages li:nth-child(odd) {
-            background: #eee;
-         }
-
-         .container {
-            border: 2px solid #dedede;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-         }
-
-         .darker {
-            border-color: #ccc;
-            background-color: #ddd;
-         }
-
-         .container::after {
-            content: "";
-            clear: both;
-            display: table;
-         }
-
-         .container img {
-            float: left;
-            max-width: 60px;
-            width: 100%;
-            margin-right: 20px;
-            border-radius: 50%;
-         }
-
-         .container img.right {
-            float: right;
-            margin-left: 20px;
-            margin-right:0;
-         }
-
-         .time-right {
-            float: right;
-            color: #aaa;
-         }
-
-         .time-left {
-            float: left;
-            color: #999;
-         }
-      </style>
-   </head>
-   <body>
-      <div id="chatbox">
-
-      </div>
-
-
-      <ul id="messages"></ul>
-      <form action="">
-         <input id="m" autocomplete="off"/>
-         <button>Send</button>
-      </form>
-      <script src="/socket.io/socket.io.js"></script>
-      <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-      <script> 'use strict';
-
-         const socket = io();
-         $('form').submit(function () {
-            socket.emit('chat message', $('#m').val());
-            /*$('#chatbox').html(' <div class="container">\n' +
-             '        <img src="/w3images/bandmember.jpg" alt="Avatar">\n' +
-             '        <p>Hello. How are you today?</p>\n' +
-             '        <span class="time-right">11:00</span>\n' +
-             '    </div>'
-             );*/
-            $('#messages').append($('<li>').text($('#m').val()));
-            $('#m').val('');
-            return false;
-         });
-
-         socket.on('bot reply', function (replyText) {
-            if (replyText == '')
-               replyText = '(No answer...)';
-            $('#messages').append($('<li>').text(replyText));
-         });
-
-
-      </script>
-   </body>
+<head>
+    <title>TrentoBot Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="chatbox">
+</div>
+<form action="">
+    <input id="m" autocomplete="off"/>
+    <button>Send</button>
+</form>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="js/script.js"></script>
+</body>
 </html>
