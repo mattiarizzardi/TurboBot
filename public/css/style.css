@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
 	background: #E7E3E2;
     font: 13px Helvetica, Arial;
+
 }
 
 form {
@@ -15,6 +17,7 @@ form {
     position: fixed;
     bottom: 0;
     width: 100%;
+
 }
 
 form input {
@@ -54,6 +57,10 @@ form button {
     top:10px;
     animation-name: animazione;
     animation-duration: 5s;
+    max-height:400px;
+    overflow: auto;
+    margin-bottom: 60px;
+
 }
 
 @keyframes animazione{
@@ -66,14 +73,17 @@ form button {
     list-style-type: none;
     margin: 0; 
     padding: 0;
+
 }
 
 #messages li {
     padding: 5px 10px;
+
 }
 
 #messages li:nth-child(odd) {
     background: #eee;
+
 }
 
 .container {
@@ -82,17 +92,20 @@ form button {
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+
 }
 
 .darker {
     border-color: #ccc;
     background-color: #ddd;
+
 }
 
 .container::after {
     content: "";
     clear: both;
     display: table;
+
 }
 
 .container img {
@@ -101,6 +114,7 @@ form button {
     width: 100%;
     margin-right: 20px;
     border-radius: 50%;
+
 }
 
 .container img.right {
