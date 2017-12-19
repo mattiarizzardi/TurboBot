@@ -26,8 +26,6 @@ $('form').submit(function () {
 
         '    </div>'
     );
-$('#chatbox').animate({"scrollTop": $('#chatbox')[0].scrollHeight}, "fast");
-
     $('#m').val('');
     return false;
 });
@@ -41,9 +39,5 @@ socket.on('bot reply', function (replyText) {
         '        <p>' + replyText + ' </p>\n' +
         '        <span class="time-right">' + h + ':' + m + '  </span>\n' +
         '    </div>'
-
     );
-$('#chatbox').animate({"scrollTop": $('#chatbox')[0].scrollHeight}, "fast");
-}
-
-);
+});
